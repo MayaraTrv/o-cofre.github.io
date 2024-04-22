@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alteração de Fundo com Senha</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('cofre.png');
+    background-size: cover; /* Para cobrir todo o fundo */
+    background-position: center; /* Para centralizar a imagem */
+  }
+  #passwordInput {
+    padding: 10px;
+    font-size: 16px;
+  }
+  #submitButton {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+  <form id="passwordForm">
+    <input type="password" id="passwordInput" placeholder="Digite a senha">
+    <button type="button" id="submitButton">Enviar</button>
+  </form>
+
+  <script>
+    document.getElementById('submitButton').addEventListener('click', function() {
+      var password = document.getElementById('passwordInput').value;
+      // Substitua 'suaSenhaAqui' pela senha correta
+      if (password === '1234') {
+        document.body.style.backgroundImage = "url('cofre-aberto2.png')"; // Cor de fundo quando a senha está correta
+        document.body.style.backgroundSize = "75%";
+        alert('Senha Correta.');
+      } else {
+        alert('Senha incorreta. Tente novamente.');
+      }
+    });
+  </script>
+</body>
+</html>
